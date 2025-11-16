@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import type { Profile } from '../models/Profile';
 import type { ProfileService } from '../services/profile-manager/ProfileService';
+import type { IStorageService } from '../services/storage/IStorageService';
 
 interface ProfileContextValue {
   activeProfile: Profile | null;
@@ -16,33 +17,40 @@ const ProfileContext = createContext<ProfileContextValue | undefined>(undefined)
 
 interface ProfileProviderProps {
   profileService: ProfileService;
+  storage: IStorageService;
   children: ReactNode;
 }
 
 /**
  * ProfileProvider manages the active profile state across the application
  */
-export const ProfileProvider: React.FC<ProfileProviderProps> = ({ profileService, children }) => {
+export const ProfileProvider: React.FC<ProfileProviderProps> = ({ profileService, storage, children }) => {
   const [activeProfile, setActiveProfile] = useState<Profile | null>(null);
   const [profiles, setProfiles] = useState<Profile[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    loadProfiles();
+    if (storage.isInitialized()) {
+      loadProfiles();
+    }
   }, []);
 
   const loadProfiles = async () => {
     try {
+      console.log('loadProfiles called, storage initialized:', storage.isInitialized());
       setIsLoading(true);
       setError(null);
 
       const allProfiles = await profileService.getAllProfiles();
+      console.log('getAllProfiles returned:', allProfiles);
       setProfiles(allProfiles);
 
       const active = await profileService.getActiveProfile();
+      console.log('getActiveProfile returned:', active);
       setActiveProfile(active);
     } catch (err) {
+      console.error('loadProfiles error:', err);
       setError(err instanceof Error ? err.message : 'Failed to load profiles');
     } finally {
       setIsLoading(false);
@@ -73,6 +81,7 @@ export const ProfileProvider: React.FC<ProfileProviderProps> = ({ profileService
   };
 
   const refreshProfiles = async () => {
+    console.log('refreshProfiles called');
     await loadProfiles();
   };
 

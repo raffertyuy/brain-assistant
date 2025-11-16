@@ -2,16 +2,24 @@ import { IStorageService, ProfilesConfig } from './IStorageService';
 import { StorageAccessError, FileNotFoundError, StorageWriteError } from './errors';
 
 /**
- * Storage service using File System Access API with IndexedDB fallback
+ * Storage service using File System Access API with localStorage fallback
  */
 export class StorageService implements IStorageService {
   private initialized = false;
   private directoryHandle: FileSystemDirectoryHandle | null = null;
   private currentProfile: string | null = null;
   private useFileSystemAPI: boolean;
+  private readonly STORAGE_PREFIX = 'brain-assistant:';
+  private readonly INITIALIZED_KEY = 'brain-assistant:initialized';
 
   constructor() {
     this.useFileSystemAPI = 'showDirectoryPicker' in window;
+    // Check if already initialized in previous session
+    const wasInitialized = localStorage.getItem(this.INITIALIZED_KEY);
+    if (wasInitialized === 'true') {
+      this.initialized = true;
+      this.useFileSystemAPI = localStorage.getItem(`${this.STORAGE_PREFIX}useFileSystemAPI`) === 'true';
+    }
   }
 
   async initialize(): Promise<void> {
@@ -26,14 +34,21 @@ export class StorageService implements IStorageService {
           startIn: 'documents',
         });
         this.initialized = true;
+        localStorage.setItem(this.INITIALIZED_KEY, 'true');
+        localStorage.setItem(`${this.STORAGE_PREFIX}useFileSystemAPI`, 'true');
       } catch (error) {
-        throw new StorageAccessError(
-          'User denied directory access. Please grant access to continue.'
-        );
+        // User denied or error occurred, fall back to localStorage
+        console.warn('File System Access API not available, falling back to IndexedDB');
+        this.useFileSystemAPI = false;
+        this.initialized = true;
+        localStorage.setItem(this.INITIALIZED_KEY, 'true');
+        localStorage.setItem(`${this.STORAGE_PREFIX}useFileSystemAPI`, 'false');
       }
     } else {
-      // IndexedDB fallback for browsers without File System Access API
+      // localStorage fallback for browsers without File System Access API
       this.initialized = true;
+      localStorage.setItem(this.INITIALIZED_KEY, 'true');
+      localStorage.setItem(`${this.STORAGE_PREFIX}useFileSystemAPI`, 'false');
     }
   }
 
@@ -128,8 +143,11 @@ export class StorageService implements IStorageService {
       } catch (error) {
         throw new StorageWriteError(`Failed to create profile folder: ${profileName}`, error as Error);
       }
+    } else {
+      // localStorage fallback - create default files
+      localStorage.setItem(`${this.STORAGE_PREFIX}${profileName}/tasks.md`, '# Tasks\n\n');
+      localStorage.setItem(`${this.STORAGE_PREFIX}${profileName}/archive.md`, '# Archive\n\n');
     }
-    // IndexedDB fallback would store folder metadata here
   }
 
   private async readFile(path: string): Promise<string> {
@@ -146,8 +164,12 @@ export class StorageService implements IStorageService {
         throw new FileNotFoundError(path);
       }
     } else {
-      // IndexedDB fallback
-      return '';
+      // localStorage fallback
+      const content = localStorage.getItem(`${this.STORAGE_PREFIX}${path}`);
+      if (content === null) {
+        throw new FileNotFoundError(path);
+      }
+      return content;
     }
   }
 
@@ -165,8 +187,10 @@ export class StorageService implements IStorageService {
       } catch (error) {
         throw new StorageWriteError(`Failed to write file: ${path}`, error as Error);
       }
+    } else {
+      // localStorage fallback
+      localStorage.setItem(`${this.STORAGE_PREFIX}${path}`, content);
     }
-    // IndexedDB fallback would store content here
   }
 
   private async getFileHandle(

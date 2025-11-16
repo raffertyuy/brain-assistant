@@ -25,7 +25,7 @@ const mindMapService = new MindMapService(storage);
 type AppMode = 'braindump' | 'task-board' | 'brainstorm';
 
 function AppContent() {
-  const { activeProfile, refreshProfiles } = useProfile();
+  const { activeProfile, refreshProfiles, switchProfile } = useProfile();
   const [showAddDialog, setShowAddDialog] = useState(false);
   const [mode, setMode] = useState<AppMode>('braindump');
   const [showArchive, setShowArchive] = useState(false);
@@ -43,6 +43,12 @@ function AppContent() {
 
   const handleApiKeySet = (apiKey: string) => {
     aiService.setApiKey(apiKey);
+  };
+
+  const handleProfileSwitch = async (profile: Profile | null) => {
+    if (profile) {
+      await switchProfile(profile.id);
+    }
   };
 
   const handleBraindumpSubmit = async (text: string) => {
@@ -126,7 +132,7 @@ function AppContent() {
         <APIKeyConfig onKeySet={handleApiKeySet} />
         <ProfileSelector
           profileService={profileService}
-          onProfileChange={() => {}}
+          onProfileChange={handleProfileSwitch}
           onAddProfile={() => setShowAddDialog(true)}
         />
         <div style={{ padding: '2rem', textAlign: 'center' }}>
@@ -150,7 +156,7 @@ function AppContent() {
       {mode === 'braindump' && (
         <ProfileSelector
           profileService={profileService}
-          onProfileChange={() => {}}
+          onProfileChange={handleProfileSwitch}
           onAddProfile={() => setShowAddDialog(true)}
         />
       )}
@@ -242,8 +248,72 @@ function AppContent() {
 }
 
 function App() {
+  const [storageReady, setStorageReady] = useState(false);
+  const [storageError, setStorageError] = useState<string | null>(null);
+
+  useEffect(() => {
+    initializeStorage();
+  }, []);
+
+  const initializeStorage = async () => {
+    try {
+      await storage.initialize();
+      setStorageReady(true);
+    } catch (err) {
+      setStorageError(err instanceof Error ? err.message : 'Failed to initialize storage');
+    }
+  };
+
+  if (storageError) {
+    return (
+      <div style={{ 
+        padding: '2rem', 
+        textAlign: 'center',
+        maxWidth: '600px',
+        margin: '2rem auto'
+      }}>
+        <h2>Storage Initialization Required</h2>
+        <p style={{ color: '#dc2626', marginBottom: '1rem' }}>{storageError}</p>
+        <p style={{ marginBottom: '1.5rem' }}>
+          This app needs access to store your data locally. Please grant directory access when prompted.
+        </p>
+        <button
+          onClick={() => {
+            setStorageError(null);
+            initializeStorage();
+          }}
+          style={{
+            padding: '0.75rem 1.5rem',
+            background: '#3b82f6',
+            color: 'white',
+            border: 'none',
+            borderRadius: '6px',
+            fontSize: '1rem',
+            cursor: 'pointer',
+          }}
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
+
+  if (!storageReady) {
+    return (
+      <div style={{ 
+        padding: '2rem', 
+        textAlign: 'center',
+        maxWidth: '600px',
+        margin: '2rem auto'
+      }}>
+        <h2>Initializing Storage...</h2>
+        <p>Please grant directory access when prompted.</p>
+      </div>
+    );
+  }
+
   return (
-    <ProfileProvider profileService={profileService}>
+    <ProfileProvider profileService={profileService} storage={storage}>
       <AppContent />
     </ProfileProvider>
   );

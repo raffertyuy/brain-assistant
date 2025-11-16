@@ -37,10 +37,11 @@ export const AddProfileDialog: React.FC<AddProfileDialogProps> = ({
       onProfileCreated();
       onClose();
     } catch (err) {
+      console.error('Profile creation error:', err);
       if (err instanceof ProfileValidationError) {
         setError(err.message);
       } else {
-        setError('Failed to create profile. Please try again.');
+        setError(err instanceof Error ? err.message : 'Failed to create profile. Please try again.');
       }
     } finally {
       setIsCreating(false);
