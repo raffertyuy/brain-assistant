@@ -26,14 +26,14 @@ Based on plan.md, this is a single-page web application:
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Initialize TypeScript project with Vite, React 18, and TypeScript 5 dependencies
-- [ ] T002 [P] Configure ESLint and Prettier for code quality in .eslintrc.cjs and .prettierrc
-- [ ] T003 [P] Configure Vitest testing framework in vite.config.ts
-- [ ] T004 [P] Setup project folder structure: src/{components,services,models,utils}, tests/{unit,integration}
-- [ ] T005 [P] Create TypeScript type definitions in src/models/Task.ts, src/models/Profile.ts, src/models/MindMap.ts, src/models/Quadrant.ts
-- [ ] T006 [P] Install core dependencies: gray-matter, chrono-node, react-dnd, d3-force
-- [ ] T007 [P] Setup CSS variables and global styles in src/styles/variables.css
-- [ ] T008 Create .gitignore to exclude data/ folder and node_modules
+- [X] T001 Initialize TypeScript project with Vite, React 18, and TypeScript 5 dependencies
+- [X] T002 [P] Configure ESLint and Prettier for code quality in .eslintrc.cjs and .prettierrc
+- [X] T003 [P] Configure Vitest testing framework in vite.config.ts
+- [X] T004 [P] Setup project folder structure: src/{components,services,models,utils}, tests/{unit,integration}
+- [X] T005 [P] Create TypeScript type definitions in src/models/Task.ts, src/models/Profile.ts, src/models/MindMap.ts, src/models/Quadrant.ts
+- [X] T006 [P] Install core dependencies: gray-matter, chrono-node, react-dnd, d3-force
+- [X] T007 [P] Setup CSS variables and global styles in src/styles/variables.css
+- [X] T008 Create .gitignore to exclude data/ folder and node_modules
 
 ---
 
@@ -43,16 +43,16 @@ Based on plan.md, this is a single-page web application:
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T009 Implement StorageService interface in src/services/storage/StorageService.ts with File System Access API support
-- [ ] T010 [P] Implement IndexedDB fallback storage in src/services/storage/IndexedDBStorage.ts for non-Chrome browsers
-- [ ] T011 [P] Implement DateParserService in src/services/utils/DateParserService.ts using chrono-node
-- [ ] T012 [P] Create storage error classes in src/services/storage/errors.ts (StorageAccessError, FileNotFoundError, StorageWriteError)
-- [ ] T013 Implement markdown parser utility in src/utils/markdown.ts using gray-matter for YAML frontmatter
-- [ ] T014 [P] Setup test mocks in tests/mocks/storage.ts for StorageService
-- [ ] T015 [P] Setup test fixtures in tests/fixtures/tasks.ts and tests/fixtures/profiles.ts
-- [ ] T016 Write unit tests for StorageService in tests/unit/services/storage.test.ts
-- [ ] T017 [P] Write unit tests for DateParserService in tests/unit/services/date-parser.test.ts
-- [ ] T018 [P] Write unit tests for markdown utilities in tests/unit/utils/markdown.test.ts
+- [X] T009 Implement StorageService interface in src/services/storage/StorageService.ts with File System Access API support
+- [X] T010 [P] Implement IndexedDB fallback storage in src/services/storage/IndexedDBStorage.ts for non-Chrome browsers
+- [X] T011 [P] Implement DateParserService in src/services/utils/DateParserService.ts using chrono-node
+- [X] T012 [P] Create storage error classes in src/services/storage/errors.ts (StorageAccessError, FileNotFoundError, StorageWriteError)
+- [X] T013 Implement markdown parser utility in src/utils/markdown.ts using gray-matter for YAML frontmatter
+- [X] T014 [P] Setup test mocks in tests/mocks/storage.ts for StorageService
+- [X] T015 [P] Setup test fixtures in tests/fixtures/tasks.ts and tests/fixtures/profiles.ts
+- [X] T016 Write unit tests for StorageService in tests/unit/services/storage.test.ts
+- [X] T017 [P] Write unit tests for DateParserService in tests/unit/services/date-parser.test.ts
+- [X] T018 [P] Write unit tests for markdown utilities in tests/unit/utils/markdown.test.ts
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
