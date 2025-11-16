@@ -1,0 +1,207 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--color-background);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: white;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.headerLeft h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.subtitle {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.headerRight {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.addButton,
+.aiButton,
+.saveButton,
+.closeButton,
+.retryButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.addButton {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.addButton:hover:not(:disabled) {
+  background-color: var(--color-success-dark);
+}
+
+.aiButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.aiButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #5568d3 0%, #653a8e 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.aiButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.saveButton {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.saveButton:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+}
+
+.closeButton {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.closeButton:hover {
+  background-color: var(--color-background-hover);
+}
+
+.addButton:disabled,
+.aiButton:disabled,
+.saveButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  gap: 1.5rem;
+  overflow: hidden;
+}
+
+.canvasWrapper {
+  flex: 1;
+  padding: 2rem;
+  overflow: auto;
+}
+
+.loading,
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 1rem;
+}
+
+.loading {
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
+}
+
+.error {
+  color: var(--color-error);
+}
+
+.error p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.retryButton {
+  background-color: var(--color-error);
+  color: white;
+}
+
+.retryButton:hover {
+  background-color: var(--color-error-dark);
+}
+
+.instructions {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-border);
+  max-width: 300px;
+}
+
+.instructions p {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.instructions ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.instructions li {
+  margin: 0.5rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .headerRight {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .addButton,
+  .aiButton,
+  .saveButton,
+  .closeButton {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .canvasWrapper {
+    padding: 1rem;
+  }
+
+  .instructions {
+    position: static;
+    margin: 1rem;
+    max-width: none;
+  }
+}

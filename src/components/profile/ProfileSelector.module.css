@@ -1,0 +1,110 @@
+.profileSelector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.select {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: 0.875rem;
+  min-width: 200px;
+  cursor: pointer;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-alpha);
+}
+
+.addButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addButton:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.addButton:active {
+  transform: translateY(1px);
+}
+
+.loading {
+  padding: 1rem;
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.error {
+  padding: 1rem;
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.retryButton {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--color-error);
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--color-error);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.retryButton:hover {
+  background-color: var(--color-error);
+  color: white;
+}
+
+.emptyState {
+  padding: 2rem;
+  text-align: center;
+}
+
+.emptyState p {
+  margin-bottom: 1rem;
+  color: var(--color-text-secondary);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .profileSelector {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .select {
+    min-width: 100%;
+  }
+
+  .addButton {
+    width: 100%;
+  }
+}

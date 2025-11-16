@@ -68,19 +68,19 @@ Based on plan.md, this is a single-page web application:
 
 ### Implementation for User Story 2
 
-- [ ] T019 [P] [US2] Implement ProfileService interface in src/services/profile-manager/ProfileService.ts
-- [ ] T020 [P] [US2] Create profile validation utilities in src/utils/validation.ts (name uniqueness, invalid characters)
-- [ ] T021 [US2] Implement profile CRUD operations (getAllProfiles, createProfile, getProfileById, switchProfile) in ProfileService
-- [ ] T022 [P] [US2] Create profile error classes in src/services/profile-manager/errors.ts (ProfileValidationError, ProfileNotFoundError)
-- [ ] T023 [US2] Implement profile folder creation logic in ProfileService using StorageService
-- [ ] T024 [US2] Implement profiles.json read/write with schema version in ProfileService
-- [ ] T025 [P] [US2] Write unit tests for ProfileService in tests/unit/services/profile-service.test.ts
-- [ ] T026 [P] [US2] Write integration tests for profile lifecycle in tests/integration/profile-workflow.test.ts
-- [ ] T027 [US2] Create ProfileSelector component in src/components/profile/ProfileSelector.tsx
-- [ ] T028 [P] [US2] Create ProfileSelector styles in src/components/profile/ProfileSelector.module.css
-- [ ] T029 [US2] Create AddProfileDialog component in src/components/profile/AddProfileDialog.tsx
-- [ ] T030 [US2] Integrate ProfileSelector into App.tsx with profile switching logic
-- [ ] T031 [US2] Create ProfileContext provider in src/utils/ProfileContext.tsx for managing active profile state
+- [X] T019 [P] [US2] Implement ProfileService interface in src/services/profile-manager/ProfileService.ts
+- [X] T020 [P] [US2] Create profile validation utilities in src/utils/validation.ts (name uniqueness, invalid characters)
+- [X] T021 [US2] Implement profile CRUD operations (getAllProfiles, createProfile, getProfileById, switchProfile) in ProfileService
+- [X] T022 [P] [US2] Create profile error classes in src/services/profile-manager/errors.ts (ProfileValidationError, ProfileNotFoundError)
+- [X] T023 [US2] Implement profile folder creation logic in ProfileService using StorageService
+- [X] T024 [US2] Implement profiles.json read/write with schema version in ProfileService
+- [X] T025 [P] [US2] Write unit tests for ProfileService in tests/unit/services/profile-service.test.ts
+- [X] T026 [P] [US2] Write integration tests for profile lifecycle in tests/integration/profile-workflow.test.ts
+- [X] T027 [US2] Create ProfileSelector component in src/components/profile/ProfileSelector.tsx
+- [X] T028 [P] [US2] Create ProfileSelector styles in src/components/profile/ProfileSelector.module.css
+- [X] T029 [US2] Create AddProfileDialog component in src/components/profile/AddProfileDialog.tsx
+- [X] T030 [US2] Integrate ProfileSelector into App.tsx with profile switching logic
+- [X] T031 [US2] Create ProfileContext provider in src/utils/ProfileContext.tsx for managing active profile state
 
 **Checkpoint**: Profile management fully functional - users can create and switch profiles with isolated data
 
@@ -96,33 +96,33 @@ Based on plan.md, this is a single-page web application:
 
 ### Implementation for User Story 1
 
-- [ ] T032 [P] [US1] Implement AIService interface in src/services/ai/AIService.ts with OpenAI client integration
-- [ ] T033 [P] [US1] Create AI prompt templates for task extraction in src/services/ai/prompts.ts
-- [ ] T034 [US1] Implement extractTasksFromBraindump method with JSON mode response parsing in AIService
-- [ ] T035 [US1] Implement categorizeTask method for quadrant assignment based on urgency/impact in AIService
-- [ ] T036 [P] [US1] Create AI error classes in src/services/ai/errors.ts (AIServiceError)
-- [ ] T037 [US1] Implement duplicate detection logic in AIService using similarity scoring
-- [ ] T038 [P] [US1] Write unit tests for AIService in tests/unit/services/ai-service.test.ts (mocked API calls)
-- [ ] T039 [P] [US1] Implement TaskService interface in src/services/task-manager/TaskService.ts
-- [ ] T040 [US1] Implement task CRUD operations (createTask, updateTask, getAllTasks, getTasksByQuadrant) in TaskService
-- [ ] T041 [US1] Implement task quadrant calculation logic in TaskService based on urgency + businessImpact
-- [ ] T042 [US1] Implement duplicate merging (mergeDuplicate) in TaskService
-- [ ] T043 [US1] Implement task completion (completeTask) with archive logic in TaskService
-- [ ] T044 [P] [US1] Create task error classes in src/services/task-manager/errors.ts (TaskValidationError, TaskNotFoundError)
-- [ ] T045 [US1] Implement task-to-markdown serialization in TaskService using gray-matter
-- [ ] T046 [US1] Implement markdown-to-task deserialization in TaskService with YAML frontmatter parsing
-- [ ] T047 [P] [US1] Write unit tests for TaskService in tests/unit/services/task-service.test.ts
-- [ ] T048 [P] [US1] Write integration tests for braindump workflow in tests/integration/braindump-workflow.test.ts
-- [ ] T049 [US1] Create BraindumpInput component in src/components/braindump/BraindumpInput.tsx with distraction-free textarea
-- [ ] T050 [P] [US1] Create BraindumpInput styles in src/components/braindump/BraindumpInput.module.css
-- [ ] T051 [US1] Create TaskReview component in src/components/braindump/TaskReview.tsx to show extracted tasks
-- [ ] T052 [P] [US1] Create TaskReview styles in src/components/braindump/TaskReview.module.css
-- [ ] T053 [US1] Create DuplicateDialog component in src/components/braindump/DuplicateDialog.tsx for merge confirmations
-- [ ] T054 [US1] Implement braindump submission flow: extract → review → confirm → create tasks
-- [ ] T055 [US1] Add loading states and error handling for AI processing in BraindumpInput
-- [ ] T056 [US1] Create APIKeyConfig component in src/components/shared/APIKeyConfig.tsx for user to enter OpenAI key
-- [ ] T057 [US1] Store API key in localStorage with security warnings in APIKeyConfig
-- [ ] T058 [US1] Integrate braindump mode into App.tsx with mode switching (braindump ↔ task board)
+- [X] T032 [P] [US1] Implement AIService interface in src/services/ai/AIService.ts with OpenAI client integration
+- [X] T033 [P] [US1] Create AI prompt templates for task extraction in src/services/ai/prompts.ts
+- [X] T034 [US1] Implement extractTasksFromBraindump method with JSON mode response parsing in AIService
+- [X] T035 [US1] Implement categorizeTask method for quadrant assignment based on urgency/impact in AIService
+- [X] T036 [P] [US1] Create AI error classes in src/services/ai/errors.ts (AIServiceError)
+- [X] T037 [US1] Implement duplicate detection logic in AIService using similarity scoring
+- [X] T038 [P] [US1] Write unit tests for AIService in tests/unit/services/ai-service.test.ts (mocked API calls)
+- [X] T039 [P] [US1] Implement TaskService interface in src/services/task-manager/TaskService.ts
+- [X] T040 [US1] Implement task CRUD operations (createTask, updateTask, getAllTasks, getTasksByQuadrant) in TaskService
+- [X] T041 [US1] Implement task quadrant calculation logic in TaskService based on urgency + businessImpact
+- [X] T042 [US1] Implement duplicate merging (mergeDuplicate) in TaskService
+- [X] T043 [US1] Implement task completion (completeTask) with archive logic in TaskService
+- [X] T044 [P] [US1] Create task error classes in src/services/task-manager/errors.ts (TaskValidationError, TaskNotFoundError)
+- [X] T045 [US1] Implement task-to-markdown serialization in TaskService using gray-matter
+- [X] T046 [US1] Implement markdown-to-task deserialization in TaskService with YAML frontmatter parsing
+- [X] T047 [P] [US1] Write unit tests for TaskService in tests/unit/services/task-service.test.ts
+- [X] T048 [P] [US1] Write integration tests for braindump workflow in tests/integration/braindump-workflow.test.ts
+- [X] T049 [US1] Create BraindumpInput component in src/components/braindump/BraindumpInput.tsx with distraction-free textarea
+- [X] T050 [P] [US1] Create BraindumpInput styles in src/components/braindump/BraindumpInput.module.css
+- [X] T051 [US1] Create TaskReview component in src/components/braindump/TaskReview.tsx to show extracted tasks
+- [X] T052 [P] [US1] Create TaskReview styles in src/components/braindump/TaskReview.module.css
+- [X] T053 [US1] Create DuplicateDialog component in src/components/braindump/DuplicateDialog.tsx for merge confirmations
+- [X] T054 [US1] Implement braindump submission flow: extract → review → confirm → create tasks
+- [X] T055 [US1] Add loading states and error handling for AI processing in BraindumpInput
+- [X] T056 [US1] Create APIKeyConfig component in src/components/shared/APIKeyConfig.tsx for user to enter OpenAI key
+- [X] T057 [US1] Store API key in localStorage with security warnings in APIKeyConfig
+- [X] T058 [US1] Integrate braindump mode into App.tsx with mode switching (braindump ↔ task board)
 
 **Checkpoint**: Users can braindump thoughts, get AI-organized tasks with duplicate detection - MVP core feature complete
 
@@ -138,26 +138,26 @@ Based on plan.md, this is a single-page web application:
 
 ### Implementation for User Story 3
 
-- [ ] T059 [P] [US3] Create Quadrant component in src/components/task-board/Quadrant.tsx with drop zone
-- [ ] T060 [P] [US3] Create Quadrant styles in src/components/task-board/Quadrant.module.css with quadrant colors
-- [ ] T061 [P] [US3] Create TaskCard component in src/components/task-board/TaskCard.tsx with drag handle
-- [ ] T062 [P] [US3] Create TaskCard styles in src/components/task-board/TaskCard.module.css
-- [ ] T063 [US3] Create TaskBoard component in src/components/task-board/TaskBoard.tsx with 4-quadrant grid layout
-- [ ] T064 [P] [US3] Create TaskBoard styles in src/components/task-board/TaskBoard.module.css
-- [ ] T065 [US3] Integrate react-dnd with HTML5Backend in TaskBoard component
-- [ ] T066 [US3] Implement useDrag hook in TaskCard for dragging tasks
-- [ ] T067 [US3] Implement useDrop hook in Quadrant for accepting dropped tasks
-- [ ] T068 [US3] Implement moveToQuadrant logic to update task urgency/impact when dropped
-- [ ] T069 [P] [US3] Create TaskEditDialog component in src/components/task-board/TaskEditDialog.tsx
-- [ ] T070 [P] [US3] Create TaskEditDialog styles in src/components/task-board/TaskEditDialog.module.css
-- [ ] T071 [US3] Implement task detail editing (title, description, area, dueDate, businessImpact) in TaskEditDialog
-- [ ] T072 [US3] Add task completion checkbox in TaskCard with completeTask action
-- [ ] T073 [US3] Implement archive logic: move completed tasks to archive.md organized by area
-- [ ] T074 [P] [US3] Create ArchivedTasks component in src/components/task-board/ArchivedTasks.tsx
-- [ ] T075 [P] [US3] Create SearchBar component in src/components/shared/SearchBar.tsx for archived task search
-- [ ] T076 [US3] Implement getArchivedTasks and searchTasks methods in TaskService
-- [ ] T077 [P] [US3] Write unit tests for drag-and-drop quadrant updates in tests/unit/services/task-service.test.ts
-- [ ] T078 [US3] Integrate TaskBoard into App.tsx with task management mode
+- [X] T059 [P] [US3] Create Quadrant component in src/components/task-board/Quadrant.tsx with drop zone
+- [X] T060 [P] [US3] Create Quadrant styles in src/components/task-board/Quadrant.module.css with quadrant colors
+- [X] T061 [P] [US3] Create TaskCard component in src/components/task-board/TaskCard.tsx with drag handle
+- [X] T062 [P] [US3] Create TaskCard styles in src/components/task-board/TaskCard.module.css
+- [X] T063 [US3] Create TaskBoard component in src/components/task-board/TaskBoard.tsx with 4-quadrant grid layout
+- [X] T064 [P] [US3] Create TaskBoard styles in src/components/task-board/TaskBoard.module.css
+- [X] T065 [US3] Integrate react-dnd with HTML5Backend in TaskBoard component
+- [X] T066 [US3] Implement useDrag hook in TaskCard for dragging tasks
+- [X] T067 [US3] Implement useDrop hook in Quadrant for accepting dropped tasks
+- [X] T068 [US3] Implement moveToQuadrant logic to update task urgency/impact when dropped
+- [X] T069 [P] [US3] Create TaskEditDialog component in src/components/task-board/TaskEditDialog.tsx
+- [X] T070 [P] [US3] Create TaskEditDialog styles in src/components/task-board/TaskEditDialog.module.css
+- [X] T071 [US3] Implement task detail editing (title, description, area, dueDate, businessImpact) in TaskEditDialog
+- [X] T072 [US3] Add task completion checkbox in TaskCard with completeTask action
+- [X] T073 [US3] Implement archive logic: move completed tasks to archive.md organized by area
+- [X] T074 [P] [US3] Create ArchivedTasks component in src/components/task-board/ArchivedTasks.tsx
+- [X] T075 [P] [US3] Create SearchBar component in src/components/shared/SearchBar.tsx for archived task search
+- [X] T076 [US3] Implement getArchivedTasks and searchTasks methods in TaskService
+- [X] T077 [P] [US3] Write unit tests for drag-and-drop quadrant updates in tests/unit/services/task-service.test.ts
+- [X] T078 [US3] Integrate TaskBoard into App.tsx with task management mode
 
 **Checkpoint**: Visual 4-quadrant task management with drag-and-drop and archiving fully functional
 
@@ -173,27 +173,27 @@ Based on plan.md, this is a single-page web application:
 
 ### Implementation for User Story 4
 
-- [ ] T079 [P] [US4] Implement MindMapService interface in src/services/mind-map/MindMapService.ts
-- [ ] T080 [US4] Implement createMindMap, getMindMap, addNode, updateNode, deleteNode in MindMapService
-- [ ] T081 [US4] Implement toMarkdown method to convert mind map to hierarchical markdown in MindMapService
-- [ ] T082 [US4] Implement fromMarkdown method to parse markdown into mind map structure in MindMapService
-- [ ] T083 [P] [US4] Write unit tests for MindMapService in tests/unit/services/mind-map-service.test.ts
-- [ ] T084 [P] [US4] Create markdown-to-tree parser utility in src/utils/markdown-tree.ts
-- [ ] T085 [P] [US4] Create MindMapCanvas component in src/components/mind-map/MindMapCanvas.tsx with SVG rendering
-- [ ] T086 [P] [US4] Create MindMapCanvas styles in src/components/mind-map/MindMapCanvas.module.css
-- [ ] T087 [US4] Integrate D3-force simulation for node layout in MindMapCanvas (selective import)
-- [ ] T088 [US4] Implement node rendering with circles and text labels in MindMapCanvas
-- [ ] T089 [US4] Implement link/edge rendering between nodes in MindMapCanvas
-- [ ] T090 [P] [US4] Create NodeEditor component in src/components/mind-map/NodeEditor.tsx for adding/editing nodes
-- [ ] T091 [P] [US4] Create NodeEditor styles in src/components/mind-map/NodeEditor.module.css
-- [ ] T092 [US4] Implement add child node functionality in MindMapCanvas
-- [ ] T093 [US4] Implement delete node functionality in MindMapCanvas
-- [ ] T094 [US4] Implement task linking: create clickable links to other tasks in mind map
-- [ ] T095 [US4] Add save button to persist mind map as markdown file in data/{profile}/mind-maps/{taskId}.md
-- [ ] T096 [US4] Add load logic to retrieve saved mind map when entering brainstorm mode
-- [ ] T097 [US4] Create BrainstormMode component in src/components/mind-map/BrainstormMode.tsx with task context
-- [ ] T098 [US4] Integrate brainstorm mode into task flow: click task → "Brainstorm" button → BrainstormMode
-- [ ] T099 [P] [US4] Write integration tests for mind map lifecycle in tests/integration/mind-map-workflow.test.ts
+- [X] T079 [P] [US4] Implement MindMapService interface in src/services/mind-map/MindMapService.ts
+- [X] T080 [US4] Implement createMindMap, getMindMap, addNode, updateNode, deleteNode in MindMapService
+- [X] T081 [US4] Implement toMarkdown method to convert mind map to hierarchical markdown in MindMapService
+- [X] T082 [US4] Implement fromMarkdown method to parse markdown into mind map structure in MindMapService
+- [X] T083 [P] [US4] Write unit tests for MindMapService in tests/unit/services/mind-map-service.test.ts
+- [X] T084 [P] [US4] Create markdown-to-tree parser utility in src/utils/markdown-tree.ts
+- [X] T085 [P] [US4] Create MindMapCanvas component in src/components/mind-map/MindMapCanvas.tsx with SVG rendering
+- [X] T086 [P] [US4] Create MindMapCanvas styles in src/components/mind-map/MindMapCanvas.module.css
+- [X] T087 [US4] Integrate D3-force simulation for node layout in MindMapCanvas (selective import)
+- [X] T088 [US4] Implement node rendering with circles and text labels in MindMapCanvas
+- [X] T089 [US4] Implement link/edge rendering between nodes in MindMapCanvas
+- [X] T090 [P] [US4] Create NodeEditor component in src/components/mind-map/NodeEditor.tsx for adding/editing nodes
+- [X] T091 [P] [US4] Create NodeEditor styles in src/components/mind-map/NodeEditor.module.css
+- [X] T092 [US4] Implement add child node functionality in MindMapCanvas
+- [X] T093 [US4] Implement delete node functionality in MindMapCanvas
+- [X] T094 [US4] Implement task linking: create clickable links to other tasks in mind map
+- [X] T095 [US4] Add save button to persist mind map as markdown file in data/{profile}/mind-maps/{taskId}.md
+- [X] T096 [US4] Add load logic to retrieve saved mind map when entering brainstorm mode
+- [X] T097 [US4] Create BrainstormMode component in src/components/mind-map/BrainstormMode.tsx with task context
+- [X] T098 [US4] Integrate brainstorm mode into task flow: click task → "Brainstorm" button → BrainstormMode
+- [X] T099 [P] [US4] Write integration tests for mind map lifecycle in tests/integration/mind-map-workflow.test.ts
 
 **Checkpoint**: Mind mapping feature complete - users can visually brainstorm task approaches
 
@@ -209,20 +209,20 @@ Based on plan.md, this is a single-page web application:
 
 ### Implementation for User Story 5
 
-- [ ] T100 [P] [US5] Implement generateBrainstormSuggestions method in AIService
-- [ ] T101 [P] [US5] Implement suggestSimplifications method in AIService to detect overcomplicated plans
-- [ ] T102 [P] [US5] Implement generateProbingQuestions method in AIService to challenge assumptions
-- [ ] T103 [P] [US5] Create AI prompt templates for brainstorming in src/services/ai/brainstorm-prompts.ts
-- [ ] T104 [P] [US5] Write unit tests for AI brainstorming methods in tests/unit/services/ai-service.test.ts
-- [ ] T105 [P] [US5] Create AISuggestionsPanel component in src/components/mind-map/AISuggestionsPanel.tsx
-- [ ] T106 [P] [US5] Create AISuggestionsPanel styles in src/components/mind-map/AISuggestionsPanel.module.css
-- [ ] T107 [US5] Implement "AI Suggestions" button in BrainstormMode to trigger generateBrainstormSuggestions
-- [ ] T108 [US5] Display AI suggestions as cards in AISuggestionsPanel with types (approach, consideration, question, simplification)
-- [ ] T109 [US5] Implement suggestion modification: user edits suggestion → request refined alternatives from AI
-- [ ] T110 [US5] Implement probing questions display with interactive feedback loop
-- [ ] T111 [US5] Add simplification detection: AI analyzes mind map complexity and suggests simpler approaches
-- [ ] T112 [US5] Add loading states and error handling for AI brainstorming operations
-- [ ] T113 [P] [US5] Write integration tests for AI-assisted brainstorming in tests/integration/ai-brainstorm-workflow.test.ts
+- [X] T100 [P] [US5] Implement generateBrainstormSuggestions method in AIService
+- [X] T101 [P] [US5] Implement suggestSimplifications method in AIService to detect overcomplicated plans
+- [X] T102 [P] [US5] Implement generateProbingQuestions method in AIService to challenge assumptions
+- [X] T103 [P] [US5] Create AI prompt templates for brainstorming in src/services/ai/brainstorm-prompts.ts
+- [X] T104 [P] [US5] Write unit tests for AI brainstorming methods in tests/unit/services/ai-service.test.ts
+- [X] T105 [P] [US5] Create AISuggestionsPanel component in src/components/mind-map/AISuggestionsPanel.tsx
+- [X] T106 [P] [US5] Create AISuggestionsPanel styles in src/components/mind-map/AISuggestionsPanel.module.css
+- [X] T107 [US5] Implement "AI Suggestions" button in BrainstormMode to trigger generateBrainstormSuggestions
+- [X] T108 [US5] Display AI suggestions as cards in AISuggestionsPanel with types (approach, consideration, question, simplification)
+- [X] T109 [US5] Implement suggestion modification: user edits suggestion → request refined alternatives from AI
+- [X] T110 [US5] Implement probing questions display with interactive feedback loop
+- [X] T111 [US5] Add simplification detection: AI analyzes mind map complexity and suggests simpler approaches
+- [X] T112 [US5] Add loading states and error handling for AI brainstorming operations
+- [X] T113 [P] [US5] Write integration tests for AI-assisted brainstorming in tests/integration/ai-brainstorm-workflow.test.ts
 
 **Checkpoint**: AI-assisted brainstorming complete - enhances user's creative process with intelligent suggestions
 
@@ -232,18 +232,18 @@ Based on plan.md, this is a single-page web application:
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T114 [P] Add responsive design breakpoints for mobile/tablet in CSS modules
-- [ ] T115 [P] Implement WCAG 2.1 Level AA compliance: keyboard navigation, ARIA labels, focus management
-- [ ] T116 [P] Add error boundaries in src/components/shared/ErrorBoundary.tsx for graceful error handling
-- [ ] T117 [P] Create user-friendly error messages for all error types across services
-- [ ] T118 [P] Add loading spinners and progress indicators in src/components/shared/LoadingSpinner.tsx
-- [ ] T119 [P] Optimize bundle size: analyze with vite-bundle-visualizer, code-split routes
-- [ ] T120 [P] Add performance monitoring: measure page load, TTI, drag-and-drop fps
-- [ ] T121 [P] Create quickstart validation script to test all user scenarios from quickstart.md
-- [ ] T122 [P] Add JSDoc comments to all service methods per constitution
-- [ ] T123 [P] Generate API documentation from JSDoc comments
-- [ ] T124 [P] Update README.md with setup instructions and feature overview
-- [ ] T125 Run full test suite and ensure >80% coverage per constitution
+- [X] T114 [P] Add responsive design breakpoints for mobile/tablet in CSS modules
+- [X] T115 [P] Implement WCAG 2.1 Level AA compliance: keyboard navigation, ARIA labels, focus management
+- [X] T116 [P] Add error boundaries in src/components/shared/ErrorBoundary.tsx for graceful error handling
+- [X] T117 [P] Create user-friendly error messages for all error types across services
+- [X] T118 [P] Add loading spinners and progress indicators in src/components/shared/LoadingSpinner.tsx
+- [X] T119 [P] Optimize bundle size: analyze with vite-bundle-visualizer, code-split routes
+- [X] T120 [P] Add performance monitoring: measure page load, TTI, drag-and-drop fps
+- [X] T121 [P] Create quickstart validation script to test all user scenarios from quickstart.md
+- [X] T122 [P] Add JSDoc comments to all service methods per constitution
+- [X] T123 [P] Generate API documentation from JSDoc comments
+- [X] T124 [P] Update README.md with setup instructions and feature overview
+- [X] T125 Run full test suite and ensure >80% coverage per constitution
 - [ ] T126 Manual testing with Playwright MCP: test all user stories across browsers and viewports
 
 ---

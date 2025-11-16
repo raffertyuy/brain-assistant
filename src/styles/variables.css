@@ -6,11 +6,37 @@
   --color-text-light: #6b7280;
   --color-border: #e5e7eb;
   
+  /* Extended color palette */
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --border-color: #e5e7eb;
+  
   /* Quadrant colors */
   --color-do: #ef4444;
   --color-plan: #3b82f6;
   --color-delegate: #f59e0b;
   --color-eliminate: #6b7280;
+  --quadrant-do: #ef4444;
+  --quadrant-plan: #3b82f6;
+  --quadrant-delegate: #f59e0b;
+  --quadrant-eliminate: #6b7280;
+  
+  /* Status colors */
+  --error-bg: #fef2f2;
+  --error-text: #dc2626;
+  --error-border: #fecaca;
+  --warning-bg: #fef3c7;
+  --warning-text: #d97706;
+  --warning-border: #fcd34d;
+  --success-bg: #d1fae5;
+  --success-text: #059669;
+  --success-border: #6ee7b7;
   
   /* Spacing */
   --spacing-xs: 0.25rem;

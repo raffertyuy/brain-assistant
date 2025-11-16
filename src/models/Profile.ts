@@ -1,7 +1,8 @@
 export interface UserProfile {
   id: string;
   name: string;
-  createdAt: Date;
-  folderPath: string;
-  lastAccessedAt: Date;
+  createdAt: string;
+  lastUsed: string;
 }
+
+export type Profile = UserProfile;
