@@ -4,6 +4,11 @@ This project is developed using [Spec Driven Development (SDD)](https://github.c
 
 And for flexibility, this project is initialized for both [GitHub Copilot](https://github.com/features/copilot) and [Cursor](https://cursor.com).
 
+> [!TIP]
+> I like using [GitHub Copilot CLI](https://github.com/features/copilot/cli) for auto-approve beast mode (at your own caution).
+- Launch the terminal and run `copilot --allow-all-tools`
+- Since GitHub Copilot CLI does **NOT** yet automatically recognize the `/slash` commands, start by typing: `We are going to use the slash commands from .github/prompts`
+
 ## GH Spec Kit Initialization
 
 ### 1. Establish project principles
@@ -33,7 +38,7 @@ Use the **`/speckit.specify`** command to describe what you want to build. Focus
 
 ## Tech Stack
 - Use Vite and React Typescript.
-- No databse, all data is stored locally. Unless specified, use your best judgement on the file format (e.g. markdown, JSON, YAML, CSV, etc.)
+- No database, all data is stored locally. Unless specified, use your best judgement on the file format (e.g. markdown, JSON, YAML, CSV, etc.)
 
 ## My Productivity Principles
 
@@ -133,7 +138,7 @@ I've given a lot of information above. Take a step back and think through everyt
 Use the **`/speckit.plan`** command to provide your tech stack and architecture choices.
 
 ```bash
-/speckit.plan The application uses Vite with minimal number of libraries. Use vanilla HTML, CSS, and JavaScript as much as possible. Images are not uploaded anywhere and metadata is stored in a local SQLite database.
+ /speckit.plan The application uses Vite/ReactJS/Typescript with minimal number of libraries. Use vanilla HTML, CSS, Javascript and Typescript as much as possible. Images are not uploaded anywhere and are stored locally. This app does not have a database, every data is stored in a local text file. Use your best judgement on the file format (markdown, json, yaml, csv, etc.)
 ```
 
 ### 4. Break down into tasks
